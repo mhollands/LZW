@@ -1,0 +1,14 @@
+*.exe
+LZW/Debug/LZW.exe
+*.opensdf
+LZW/LZW.sdf
+*.sln
+LZW/LZW.v12.suo
+*.obj
+LZW/LZW/Debug/LZW.log
+*.tlog
+LZW/LZW/Debug/vc120.idb
+*.pdb
+LZW/LZW/LZW.vcxproj.filters
+*.vcxproj
+LZW/Debug/LZW.ilk
