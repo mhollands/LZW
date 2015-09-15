@@ -3,8 +3,10 @@
 
 class LzwDictionary
 {
-	dictionaryItem m_Dictionary[4096];
+	static const int dictionarySize = 4096;
+	dictionaryItem m_Dictionary[dictionarySize];
 	uint16_t codeCount = 0;
+	int16_t m_lastSearchLocation = -1;
 public:
 	LzwDictionary()
 	{
@@ -22,15 +24,27 @@ public:
 		{
 			if (m_Dictionary[i].matches(root, addition))
 			{
-				return &(m_Dictionary[i]);
+				m_lastSearchLocation = i;
+				return &(m_Dictionary	[i]);
 			}
 		}
 
 		return nullptr;
 	}
 
-	void addCode(dictionaryItem root, uint8_t addition)
+	int16_t lastSearchLocation()
 	{
-		m_Dictionary[codeCount] = dictionaryItem(&root, addition);
+		return m_lastSearchLocation;
+	}
+
+	void addCode(dictionaryItem* root, uint8_t addition)
+	{
+		if (codeCount >= dictionarySize)
+		{
+			return;
+		}
+
+		m_Dictionary[codeCount] = dictionaryItem(root, addition);
+		codeCount++;
 	}
 };

@@ -12,3 +12,5 @@ LZW/LZW/Debug/vc120.idb
 LZW/LZW/LZW.vcxproj.filters
 *.vcxproj
 LZW/Debug/LZW.ilk
+*.log
+*.sdf
