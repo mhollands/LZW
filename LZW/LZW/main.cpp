@@ -3,7 +3,9 @@
 int main()
 {
 	LzwManager manager;
-	manager.compress("shakespeare.txt");
+	manager.compress("rnj.txt");
+
+	manager.decompress("compressed.txt");
 
 	return 0;
 }

@@ -5,7 +5,7 @@
 class dictionaryItem
 {
 private:
-	dictionaryItem *m_root;
+	dictionaryItem* m_root;
 	uint8_t m_addition;
 
 public:
@@ -40,7 +40,9 @@ public:
 	{
 		if (m_root == nullptr)
 		{
-			return std::vector<uint8_t>(m_addition);
+			std::vector<uint8_t> value;
+			value.push_back(m_addition);
+			return value;
 		}
 
 		std::vector<uint8_t> value = m_root->getValue();

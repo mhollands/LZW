@@ -25,7 +25,7 @@ public:
 			if (m_Dictionary[i].matches(root, addition))
 			{
 				m_lastSearchLocation = i;
-				return &(m_Dictionary	[i]);
+				return &(m_Dictionary[i]);
 			}
 		}
 
@@ -47,4 +47,10 @@ public:
 		m_Dictionary[codeCount] = dictionaryItem(root, addition);
 		codeCount++;
 	}
+
+	dictionaryItem* getSymbol(uint16_t index)
+	{
+		return &(m_Dictionary[index]);
+	}
+
 };
